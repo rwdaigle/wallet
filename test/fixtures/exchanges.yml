@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recipient: MyString
+  credit: 9.99
+  debit: 9.99
+  balance: 9.99
+
+two:
+  recipient: MyString
+  credit: 9.99
+  debit: 9.99
+  balance: 9.99
