@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'exchanges#dashboard'
+  get 'exchanges/dashboard'
   resources :exchanges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

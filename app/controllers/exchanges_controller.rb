@@ -6,6 +6,11 @@ class ExchangesController < ApplicationController
     @exchanges = Exchange.all
   end
 
+  # GET /exchanges/dashboard
+  def dashboard
+    @exchanges = Exchange.all
+  end
+
   # GET /exchanges/1
   def show
   end
@@ -53,6 +58,6 @@ class ExchangesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def exchange_params
-      params.require(:exchange).permit(:recipient, :credit, :debit, :balance)
+      params.require(:exchange).permit(:recipient, :credit, :debit)
     end
 end

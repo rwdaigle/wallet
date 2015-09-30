@@ -46,4 +46,11 @@ class ExchangesControllerTest < ActionController::TestCase
 
     assert_redirected_to exchanges_path
   end
+
+  test "should get dashboard" do
+    get :dashboard
+    assert_response :success
+  end
+
+  
 end
