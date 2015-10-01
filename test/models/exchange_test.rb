@@ -25,4 +25,16 @@ class ExchangeTest < ActiveSupport::TestCase
     assert_equal 55, Exchange.biggest_expense
   end
 
+  test "can find biggest expense this month" do
+    assert_equal 55, Exchange.current_month_biggest_expense
+  end
+
+  test "can get number of exchanges this month" do
+    assert_equal 3, Exchange.current_month_number_exchanges
+  end
+
+  test "can get number of exchanges last month" do
+    assert_equal 0, Exchange.last_month_number_exchanges
+  end
+
 end

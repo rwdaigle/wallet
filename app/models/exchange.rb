@@ -14,13 +14,30 @@ class Exchange < ActiveRecord::Base
     this_months_exchanges.empty? ? 0 : this_months_exchanges.sum('debit')
   end
 
+  def self.current_month_biggest_expense
+    this_months_exchanges = self.where("strftime('%m', created_at) = ?", Time.now.utc.strftime("%m"))
+    this_months_exchanges.empty? ? 0 : this_months_exchanges.maximum('debit')
+  end
+
+  def self.current_month_number_exchanges
+    this_months_exchanges = self.where("strftime('%m', created_at) = ?", Time.now.utc.strftime("%m")).count
+  end
+
   def self.last_month_expenditures
     last_months_exchanges = self.where("strftime('%m', created_at) = ?", (Time.now.utc.strftime("%m").to_i-1).to_s)
     last_months_exchanges.empty? ? 0 : this_months_exchanges.sum('debit')
   end
 
+  def self.last_month_number_exchanges
+    last_months_exchanges = self.where("strftime('%m', created_at) = ?", (Time.now.utc.strftime("%m").to_i-1).to_s).count
+  end
+
   def self.biggest_expense
     self.maximum('debit')
+  end
+
+  def self.most_expensive_company
+    self.group("recipient").order("sum(debit)").last.recipient
   end
 
   def self.chastise_overdrafts

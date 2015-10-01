@@ -21,8 +21,28 @@
   </p>
 
   <p>
-    Biggest single expense:
+    Biggest single expense this month:
+    $<%= number_with_precision(Exchange.current_month_biggest_expense, precision: 2) %>
+  </p>
+
+  <p>
+    Biggest single expense ever:
     $<%= number_with_precision(Exchange.biggest_expense, precision: 2) %>
+  </p>
+
+  <p>
+    Place you've spent the most money:
+    <%= Exchange.most_expensive_company %>
+  </p>
+
+  <p>
+    Total number of exchanges this month:
+    <%= Exchange.current_month_number_exchanges %>
+  </p>
+
+  <p>
+    Total number of exchanges last month:
+    <%= Exchange.last_month_number_exchanges %>
   </p>
 
   <p>

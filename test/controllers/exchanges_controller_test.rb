@@ -26,7 +26,7 @@ class ExchangesControllerTest < ActionController::TestCase
       post :create, exchange: { balance: @exchange.balance, credit: @exchange.credit, debit: @exchange.debit, recipient: @exchange.recipient }
     end
 
-    assert_redirected_to exchange_path(assigns(:exchange))
+    assert_redirected_to exchanges_path
   end
 
   test "should show exchange" do
@@ -41,7 +41,7 @@ class ExchangesControllerTest < ActionController::TestCase
 
   test "should update exchange" do
     patch :update, id: @exchange, exchange: { balance: @exchange.balance, credit: @exchange.credit, debit: @exchange.debit, recipient: @exchange.recipient }
-    assert_redirected_to exchange_path(assigns(:exchange))
+    assert_redirected_to exchanges_path
   end
 
   test "should destroy exchange" do

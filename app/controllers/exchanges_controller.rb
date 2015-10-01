@@ -31,7 +31,7 @@ class ExchangesController < ApplicationController
     @exchange.set_balance(current_balance)
 
     if @exchange.save
-      redirect_to @exchange, notice: 'Exchange was successfully created.'
+      redirect_to exchanges_path, notice: 'Exchange was successfully created.'
     else
       render :new
     end
@@ -40,7 +40,7 @@ class ExchangesController < ApplicationController
   # PATCH/PUT /exchanges/1
   def update
     if @exchange.update(exchange_params)
-      redirect_to @exchange, notice: 'Exchange was successfully updated.'
+      redirect_to exchanges_path, notice: 'Exchange was successfully updated.'
     else
       render :edit
     end
