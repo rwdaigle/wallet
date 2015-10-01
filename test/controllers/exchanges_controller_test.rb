@@ -16,6 +16,11 @@ class ExchangesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "new should not have balance" do
+    get :new
+    refute response.body.include?("balance")
+  end
+
   test "should create exchange" do
     assert_difference('Exchange.count') do
       post :create, exchange: { balance: @exchange.balance, credit: @exchange.credit, debit: @exchange.debit, recipient: @exchange.recipient }
@@ -52,5 +57,9 @@ class ExchangesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  
+
+
+
+
+
 end
