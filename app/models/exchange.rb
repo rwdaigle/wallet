@@ -1,5 +1,5 @@
 class Exchange < ActiveRecord::Base
-
+  validates :recipient, presence: true
   def set_balance(current_balance)
     self.balance = current_balance + credit if credit
     self.balance = current_balance - debit if debit

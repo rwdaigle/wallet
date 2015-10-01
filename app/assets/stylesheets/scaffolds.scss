@@ -90,12 +90,14 @@ div {
   background-color: #fff;
   text-align: center;
   border-radius: 25px;
+  box-shadow: 0 5px 15px #333;
 }
 
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
+  margin: auto
 }
 
 #error_explanation {
@@ -103,8 +105,9 @@ div {
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
   background-color: #f0f0f0;
+  margin: auto;
 
   h2 {
     text-align: left;
