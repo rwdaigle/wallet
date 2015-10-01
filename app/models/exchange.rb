@@ -24,10 +24,24 @@ class Exchange < ActiveRecord::Base
   end
 
   def self.chastise_overdrafts
+    # output = ""
+    # if self.current_balance < 0
+    #   output = "YOU HAVE OVERDRAFTED! HOW DARE YOU NOT HAVE ENOUGH MONEY! "
+    #   output += "YOUR FRIENDS, FAMILY, AND COWORKERS HAVE BEEN ALERTED OF YOUR NEGLIGENCE!"
+    # end
+    # output
+
     output = ""
     if self.current_balance < 0
-      output = "YOU HAVE OVERDRAFTED! HOW DARE YOU NOT HAVE ENOUGH MONEY! "
-      output += "YOUR FRIENDS, FAMILY, AND COWORKERS HAVE BEEN ALERTED OF YOUR NEGLIGENCE!"
+      choice = rand(1..3)
+      case choice
+      when 1
+        output = "YOU'RE NOT YOUR JOB. YOU'RE NOT HOW MUCH MONEY YOU HAVE IN THE BANK. WHICH IS GOOD BECAUSE YOU HAVE NONE."
+      when 2
+        output = "THE THINGS YOU OWN END UP OWNING YOU. LUCKILY, YOU OWN NOTHING."
+      when 3
+        output = "IT'S ONLY AFTER WE'VE LOST EVERYTHING THAT WE'RE FREE TO DO ANYTHING. WELL, LOOKS LIKE YOU'RE FREE."
+      end
     end
     output
   end
