@@ -23,4 +23,15 @@ class Exchange < ActiveRecord::Base
     self.maximum('debit')
   end
 
+  def self.chastise_overdrafts
+    output = ""
+    if self.current_balance < 0
+      output = "YOU HAVE OVERDRAFTED! HOW DARE YOU NOT HAVE ENOUGH MONEY! "
+      output += "YOUR FRIENDS, FAMILY, AND COWORKERS HAVE BEEN ALERTED OF YOUR NEGLIGENCE!"
+    end
+    output
+  end
+
+
+
 end

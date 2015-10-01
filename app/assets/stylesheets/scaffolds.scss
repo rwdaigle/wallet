@@ -5,15 +5,26 @@ td, th {
   padding: 3px;
 }
 
+th {
+  border: 1px solid gray;
+}
+
+table {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 h1 {
   display: block;
   padding-top: 2%;
   padding-bottom: 2%;
   margin: auto;
+  text-decoration: underline;
 }
 
 body {
-  background-color: #c8c8c8;
+  background-color: #4A7D8F;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -55,12 +66,19 @@ div {
   color: green;
 }
 
+#overdraft {
+  color: red;
+  font-size: 4em;
+  line-height: 3em;
+  margin: auto;
+}
 .content {
   display: block;
   width: 50%;
   margin: auto;
   background-color: #fff;
   text-align: center;
+  border-radius: 25px;
 }
 
 .field_with_errors {
