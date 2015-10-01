@@ -30,11 +30,11 @@ class ExchangeTest < ActiveSupport::TestCase
   end
 
   test "can get number of exchanges this month" do
-    assert_equal 3, Exchange.current_month_number_exchanges
+    assert_equal 2, Exchange.current_month_number_exchanges
   end
 
   test "can get number of exchanges last month" do
-    assert_equal 0, Exchange.last_month_number_exchanges
+    assert_equal 1, Exchange.last_month_number_exchanges
   end
 
 end

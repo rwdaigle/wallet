@@ -29,7 +29,7 @@ class Exchange < ActiveRecord::Base
   end
 
   def self.last_month_number_exchanges
-    last_months_exchanges = self.where("strftime('%m', created_at) = ?", (Time.now.utc.strftime("%m").to_i-1).to_s).count
+    self.where("created_at BETWEEN ? AND ?", (Time.now - 1.month).beginning_of_month, (Time.now - 1.month).end_of_month).count
   end
 
   def self.biggest_expense

@@ -11,7 +11,7 @@ two:
   credit: 100.00
   debit:
   balance:
-
+  created_at: <%= Time.now - 1.month %>
 three:
   recipient: Hess
   credit:
