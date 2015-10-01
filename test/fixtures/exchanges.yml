@@ -7,7 +7,13 @@ one:
   balance: 0.00
 
 two:
-  recipient: Target
+  recipient: Self
+  credit: 100.00
+  debit:
+  balance:
+
+three:
+  recipient: Hess
   credit:
-  debit: 20.00
-  balance: 35.00
+  debit: 55.00
+  balance:

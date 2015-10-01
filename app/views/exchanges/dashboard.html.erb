@@ -1,25 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
+  <p id="notice"><%= notice %></p>
 
-<h1>Dashboard</h1>
+  <h1>Dashboard</h1>
 
-Current balance:
-<%= Exchange.current_balance %>
-<br>
-<p>
-Create a new exchange:
-<%= link_to 'New Exchange', new_exchange_path %>
-</p>
+  <p>
+    Current balance:
+    $<%= number_with_precision(Exchange.current_balance, precision: 2) %>
+  </p>
 
-<p>
-View all exchanges:
-<%= link_to 'All Exchanges', exchanges_path %>
-</p>
+  <p>
+    Amount spent this month:
+    $<%= number_with_precision(Exchange.current_month_expenditures, precision: 2) %>
+  </p>
 
-<p>
-Amount spent this month:
+  <p>
+    Amount spent last month:
+    $<%= number_with_precision(Exchange.last_month_expenditures, precision: 2) %>
+  </p>
 
-</p>
-<p>
+  <p>
+    Biggest single expense:
+    $<%= number_with_precision(Exchange.biggest_expense, precision: 2) %>
+  </p>
 
-Most money spent at:
-</p>
+  <p>
+    Create a new exchange:
+    <%= link_to 'New Exchange', new_exchange_path %>
+  </p>
+
+  <p>
+    View all exchanges:
+    <%= link_to 'All Exchanges', exchanges_path %>
+  </p>
+</div>

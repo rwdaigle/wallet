@@ -1,24 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
 
-<p>
-  <strong>Recipient:</strong>
-  <%= @exchange.recipient %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Credit:</strong>
-  <%= @exchange.credit %>
-</p>
+  <p>
+    <strong>Recipient:</strong>
+    <%= @exchange.recipient %>
+  </p>
 
-<p>
-  <strong>Debit:</strong>
-  <%= @exchange.debit %>
-</p>
+  <p>
+    <strong>Credit:</strong>
+    <%= @exchange.credit %>
+  </p>
 
-<p>
-  <strong>Balance:</strong>
-  <%= @exchange.balance %>
-</p>
+  <p>
+    <strong>Debit:</strong>
+    <%= @exchange.debit %>
+  </p>
 
-<%= link_to 'Edit', edit_exchange_path(@exchange) %> |
-<%= link_to 'Back', exchanges_path %>
+  <p>
+    <strong>Balance:</strong>
+    <%= @exchange.balance %>
+  </p>
+
+  <%= link_to 'Edit', edit_exchange_path(@exchange) %> |
+  <%= link_to 'Back', exchanges_path %>
+</div>

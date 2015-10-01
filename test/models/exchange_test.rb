@@ -6,4 +6,23 @@ class ExchangeTest < ActiveSupport::TestCase
 
     assert_equal 0, balance
   end
+
+  # test "balance updates with new exchange" do
+  #   assert_equal 45, Exchange.current_balance
+  #   Exchange.create(debit:40)
+  #   assert_equal 5, Exchange.current_balance
+  # end
+
+  test "can get amount spent this month" do
+    assert_equal 55,  Exchange.current_month_expenditures
+  end
+
+  test "can get amount spent last month" do
+    assert_equal 0,  Exchange.last_month_expenditures
+  end
+
+  test "can find biggest expense ever" do
+    assert_equal 55, Exchange.biggest_expense
+  end
+
 end

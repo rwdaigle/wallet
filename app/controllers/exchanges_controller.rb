@@ -27,6 +27,8 @@ class ExchangesController < ApplicationController
   # POST /exchanges
   def create
     @exchange = Exchange.new(exchange_params)
+    current_balance = Exchange.current_balance
+    @exchange.set_balance(current_balance)
 
     if @exchange.save
       redirect_to @exchange, notice: 'Exchange was successfully created.'
