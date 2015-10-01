@@ -1,12 +1,15 @@
 class Exchange < ActiveRecord::Base
   validates :recipient, presence: true
   def set_balance(current_balance)
-    self.balance = current_balance + credit if credit
-    self.balance = current_balance - debit if debit
+    self.balance ||= 0
+    if self
+      self.balance = current_balance + credit if credit
+      self.balance = current_balance - debit if debit
+    end
   end
 
   def self.current_balance
-    self.last.balance
+    self.last.balance rescue 0
   end
 
   def self.current_month_expenditures
