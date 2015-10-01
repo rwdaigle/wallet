@@ -19,15 +19,7 @@
 
     <tbody>
       <% @exchanges.each do |exchange| %>
-        <tr>
-          <td><%= exchange.recipient %></td>
-          <td>$<%= number_with_precision(exchange.credit, precision: 2) %></td>
-          <td>$<%= number_with_precision(exchange.debit, precision: 2) %></td>
-          <td>$<%= number_with_precision(exchange.balance, precision: 2) %></td>
-          <td><%= link_to 'Show', exchange %></td>
-          <td><%= link_to 'Edit', edit_exchange_path(exchange) %></td>
-          <td><%= link_to 'Destroy', exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <%= render partial:"row", locals:{e: exchange} %>
       <% end %>
     </tbody>
   </table>
