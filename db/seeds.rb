@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-    Exchange.create(recipient: "Initial balance", credit: 0)
+    Exchange.create(recipient: "Initial balance", credit: 0, balance: 0)
