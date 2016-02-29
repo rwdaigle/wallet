@@ -39,10 +39,6 @@ class Exchange < ActiveRecord::Base
     self.maximum('debit')
   end
 
-  def self.most_expensive_company
-    self.group("recipient").order("sum(debit)").last.recipient
-  end
-
   def self.chastise_overdrafts
     # output = ""
     # if self.current_balance < 0
