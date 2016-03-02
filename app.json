@@ -2,6 +2,7 @@
   "name": "Wallet",
   "description": "The Iron Yard Heroku lecture test app",
   "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
     "LANG": {
