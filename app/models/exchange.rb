@@ -13,21 +13,21 @@ class Exchange < ActiveRecord::Base
   end
 
   def self.current_month_expenditures
-    this_months_exchanges = self.where("strftime('%m', created_at) = ?", Time.now.utc.strftime("%m"))
+    this_months_exchanges = self.where("to_char(created_at, 'MM') = ?", Time.now.utc.strftime("%m"))
     this_months_exchanges.empty? ? 0 : this_months_exchanges.sum('debit')
   end
 
   def self.current_month_biggest_expense
-    this_months_exchanges = self.where("strftime('%m', created_at) = ?", Time.now.utc.strftime("%m"))
+    this_months_exchanges = self.where("to_char(created_at, 'MM') = ?", Time.now.utc.strftime("%m"))
     this_months_exchanges.empty? ? 0 : this_months_exchanges.maximum('debit')
   end
 
   def self.current_month_number_exchanges
-    this_months_exchanges = self.where("strftime('%m', created_at) = ?", Time.now.utc.strftime("%m")).count
+    this_months_exchanges = self.where("to_char(created_at, 'MM') = ?", Time.now.utc.strftime("%m")).count
   end
 
   def self.last_month_expenditures
-    last_months_exchanges = self.where("strftime('%m', created_at) = ?", (Time.now.utc.strftime("%m").to_i-1).to_s)
+    last_months_exchanges = self.where("to_char(created_at, 'MM') = ?", (Time.now.utc.strftime("%m").to_i-1).to_s)
     last_months_exchanges.empty? ? 0 : this_months_exchanges.sum('debit')
   end
 
