@@ -28,7 +28,7 @@ class Exchange < ActiveRecord::Base
 
   def self.last_month_expenditures
     last_months_exchanges = self.where("to_char(created_at, 'MM') = ?", (Time.now.utc.strftime("%m").to_i-1).to_s)
-    last_months_exchanges.empty? ? 0 : this_months_exchanges.sum('debit')
+    last_months_exchanges.empty? ? 0 : last_months_exchanges.sum('debit')
   end
 
   def self.last_month_number_exchanges
