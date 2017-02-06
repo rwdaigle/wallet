@@ -1,22 +1,24 @@
 # Wallet App
 
-## What it does
+Test app mainly used for showing how to deploy apps to Heroku.
 
-This program allows a user to keep track of money exchanges via a web interface.
-Users can view their total expenditures for the current and previous months as
-well as their single biggest expense. Users may view a table of all their exchanges,
-post new exchanges, and edit or delete old exchanges.
+## Local setup
 
-## Why it's here
+Configure PG instance:
 
-This program is meant to be a demonstration of the power of rails scaffold
-generation.
+```
+$ pg_ctl init -D db/postgresql
+```
 
-## New features
-* Users are now properly chastised for overdrafting.
-* Content now has some color, content is in its own box.
-* Page elements have room to breathe
+Start PG:
 
-## Known Issues
-* This is not a secure application, exchanges can be edited and faked.
-* There are no cats in this app.
+```
+$ postgres -D db/postgresql
+```
+
+Bootstrap DB.
+
+```
+$ createdb wallet_dev
+$ bundle exec rake db:migrate
+```
